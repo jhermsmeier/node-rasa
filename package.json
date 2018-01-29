@@ -1,0 +1,34 @@
+{
+  "name": "rasa",
+  "version": "0.0.0",
+  "description": "Electron's asar archive format",
+  "license": "MIT",
+  "author": "Jonas Hermsmeier <jhermsmeier@gmail.com> (https://jhermsmeier.de)",
+  "keywords": [
+    "asar",
+    "electron",
+    "archive"
+  ],
+  "main": "lib/rasa",
+  "scripts": {
+    "test": "mocha",
+    "benchmark": "nanobench benchmark/rasa/*.js",
+    "benchmark-compare": "nanobench benchmark/compare/asar.js > benchmark/asar.log && nanobench benchmark/compare/rasa.js > benchmark/rasa.log && nanobench-compare benchmark/rasa.log benchmark/asar.log"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "asar": "^0.14.0",
+    "mocha": "^5.0.0",
+    "nanobench": "^2.1.0"
+  },
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "homepage": "https://github.com/jhermsmeier/node-rasa",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jhermsmeier/node-rasa.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jhermsmeier/node-rasa/issues"
+  }
+}
