@@ -12,7 +12,8 @@
   "main": "lib/rasa",
   "scripts": {
     "test": "mocha",
-    "benchmark": "nanobench benchmark/rasa/*.js",
+    "pack": "rm test/data/pack.asar && asar pack --exclude-hidden ./lib test/data/pack.asar",
+    "benchmark": "nanobench benchmark/compare/rasa.js",
     "benchmark-compare": "nanobench benchmark/compare/asar.js > benchmark/asar.log && nanobench benchmark/compare/rasa.js > benchmark/rasa.log && nanobench-compare benchmark/rasa.log benchmark/asar.log"
   },
   "dependencies": {},

@@ -9,7 +9,7 @@ describe( 'Archive', function() {
   var archive = null
 
   before( function( done ) {
-    var filename = path.join( __dirname, 'data', 'electron.asar' )
+    var filename = path.join( __dirname, 'data', 'pack.asar' )
     archive = new rasa.Archive()
     archive.open( filename, done )
   })
@@ -24,10 +24,24 @@ describe( 'Archive', function() {
   })
 
   specify( 'readFile', function( done ) {
-    archive.readFile( 'worker/init.js', function( error, buffer ) {
+    var expected = fs.readFileSync( path.join( __dirname, '..', 'lib', 'archive.js' ) )
+    archive.readFile( 'archive.js', function( error, buffer ) {
       assert.ifError( error )
+      assert.deepEqual( expected, buffer )
       done()
     })
+  })
+
+  specify( 'createReadStream', function( done ) {
+    var expected = fs.readFileSync( path.join( __dirname, '..', 'lib', 'archive.js' ), 'utf8' )
+    var actual = ''
+    archive.createReadStream( 'archive.js' )
+      .on( 'error', done )
+      .on( 'data', (chunk) => { actual += chunk })
+      .on( 'end', () => {
+        assert.deepEqual( expected, actual )
+        done()
+      })
   })
 
 })
