@@ -77,10 +77,9 @@ archive.createReadStream( 'archive.js' )
   .pipe( process.stdout )
 ```
 
-## Benchmarks
-
-Run the benchmarks
+## Running the tests
 
 ```
-npm run benchmark
+$ npm run pack
+$ npm test
 ```
