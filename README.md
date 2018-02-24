@@ -76,10 +76,3 @@ var ls = archive.readdir( '/' )
 archive.createReadStream( 'archive.js' )
   .pipe( process.stdout )
 ```
-
-## Running the tests
-
-```
-$ npm run pack
-$ npm test
-```
