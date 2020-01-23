@@ -16,7 +16,9 @@
     "benchmark": "nanobench benchmark/compare/rasa.js",
     "benchmark-compare": "nanobench benchmark/compare/asar.js > benchmark/asar.log && nanobench benchmark/compare/rasa.js > benchmark/rasa.log && nanobench-compare benchmark/rasa.log benchmark/asar.log"
   },
-  "dependencies": {},
+  "dependencies": {
+    "minimatch": "^3.0.4"
+  },
   "devDependencies": {
     "asar": "^2.0.3",
     "mocha": "^5.2.0",
