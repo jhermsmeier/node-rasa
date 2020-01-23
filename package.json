@@ -18,8 +18,8 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "asar": "^0.14.2",
-    "mocha": "^5.0.1",
+    "asar": "^2.0.3",
+    "mocha": "^5.2.0",
     "nanobench": "^2.1.0"
   },
   "peerDependencies": {},
